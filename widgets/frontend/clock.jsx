@@ -39,7 +39,7 @@ class Clock extends React.Component{
                 <div className="card">
                     <h1>Clock</h1>
                     <br />
-                    { this.state.time.getHours() % 12 }: { this.state.time.getMinutes() }: { this.state.time.getSeconds() } 
+                    { this.state.time.getHours() % 12}: { this.state.time.getMinutes() }: { this.state.time.getSeconds() } 
                     <br />
                     { this.state.time.getUTCMonth() + 1 }- { this.state.time.getUTCDate() }- { this.state.time.getFullYear() } 
                 </div>
@@ -65,7 +65,7 @@ class Clock extends React.Component{
     // last thing to be called
     // resets id, so it can do a completely different tick
     componentWillUnmount() {
-        this.id = null;
+        clearInterval(this.id);
     }
 }
 
